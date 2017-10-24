@@ -331,8 +331,14 @@ def read_primitive(f, type):
         return bool(readstruct(f, 'b')[0])
     elif type == PrimitiveType.Byte:
         return readstruct(f, 'B')[0]
+    elif type == PrimitiveType.UInt32:
+        return readstruct(f, 'I')[0]
     elif type == PrimitiveType.Int32:
         return readstruct(f, 'i')[0]
+    elif type == PrimitiveType.UInt16:
+        return readstruct(f, 'H')[0]
+    elif type == PrimitiveType.Int16:
+        return readstruct(f, 'h')[0]
     elif type == PrimitiveType.DateTime:
         val = readstruct(f, 'Q')[0]
 
